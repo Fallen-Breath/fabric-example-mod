@@ -8,3 +8,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+include(":subproject1")
+include(":subproject2")
+project(":subproject1").buildFileName = "../common.gradle"
+project(":subproject2").buildFileName = "../common.gradle"
