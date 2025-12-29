@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "modid2",
 	"version": "${version}",
 	"name": "Example mod",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.example2.ExampleMod2"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.example2.ExampleModClient2"
 		]
 	},
 	"mixins": [
