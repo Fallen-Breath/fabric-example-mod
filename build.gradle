@@ -29,6 +29,9 @@ loom {
 		}
 	}
 
+	mixin {
+		useLegacyMixinAp = true
+	}
 }
 
 dependencies {
