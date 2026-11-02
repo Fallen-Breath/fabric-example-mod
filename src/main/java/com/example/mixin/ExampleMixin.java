@@ -1,15 +1,15 @@
 package com.example.mixin;
 
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(MinecraftServer.class)
+@Mixin(Vec3.class)
 public class ExampleMixin {
-	@Inject(at = @At("HEAD"), method = "loadLevel")
-	private void init(CallbackInfo info) {
-		// This code is injected into the start of MinecraftServer.loadLevel()V
+	@Inject(at = @At(value = "FIELD", target = "Lnet/minecraft/world/phys/Vec3;x:D"), method = "lengthSqr", require = 2)
+	private void init(CallbackInfoReturnable<Double> info) {
+		// Vec3.lengthSqr() reads x twice.
 	}
 }
